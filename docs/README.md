@@ -5,6 +5,7 @@
 > 1. [Java 面试知识点解析(四)——版本特性篇](https://www.jianshu.com/p/9c50729464b5)
 > 2. [Spring源码解析](https://www.yuque.com/huifer/spring/vhvbs3)
 > 3. [Java面试+学习指南 - 敖丙](https://github.com/AobingJava/JavaFamily) 
+> 3. [JCSprout](https://crossoverjie.top/JCSprout/#/soft-skills/Interview-experience) 
 
 ## Article To Read 
 
@@ -13,6 +14,7 @@
 > - [ ] [Spring 常见问题](https://mp.weixin.qq.com/s/wcK2qsZxKDJTLIGqEIyaNg)
 > - [ ] [MySQL Explain](https://mp.weixin.qq.com/s/s3IvJ7bm03X49timtQ2e9Q)
 > - [ ] [Netty 可以做什么](https://www.zhihu.com/question/24322387)
+> - [ ] [查缺补漏 Redis的知识体系](https://juejin.cn/post/6857667542652190728)
 
 ## 面筋
 
@@ -135,6 +137,6 @@
 
 > 1. [阮一峰 GitHub Actions 入门](http://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html)
 
-## 工具站
+## 收藏网址
 
 > 1. [资源搜索教程](https://www.yuque.com/eureka007/ziyuan/zgh5wk)
