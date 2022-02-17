@@ -5,7 +5,8 @@
 > 1. [Java 面试知识点解析(四)——版本特性篇](https://www.jianshu.com/p/9c50729464b5)
 > 2. [Spring源码解析](https://www.yuque.com/huifer/spring/vhvbs3)
 > 3. [Java面试+学习指南 - 敖丙](https://github.com/AobingJava/JavaFamily) 
-> 3. [JCSprout](https://crossoverjie.top/JCSprout/#/soft-skills/Interview-experience) 
+> 3. [CS-Note](https://github.com/CyC2018/CS-Notes)
+> 3. **[JCSprout](https://github.com/crossoverJie/JCSprout/tree/master/docs)**
 
 ## Article To Read 
 
@@ -24,6 +25,7 @@
 ## 项目栗子
 
 > 1. [VUE 可视化商城项目](https://github.com/wangyuan389/mall-cook)
+> 1. [Java简单实践项目](https://github.com/521xueweihan/HelloGitHub/blob/master/content/57/HelloGitHub57.md#Java-%E9%A1%B9%E7%9B%AE)
 
 # Java
 
@@ -34,6 +36,23 @@
 ## JVM
 
 ## 线程
+
+## 其他
+
+### 各种Object
+
+> DO、DTO、BO、AO、VO、POJO 
+>
+> - DO （ Data Object ）：与数据库表结构一一对应，通过 DAO 层向上传输数据源对象。
+> - DTO （ Data Transfer Object ）：数据传输对象，Service 或 Manager 向外传输的对象。
+> - BO （ Business Object ）：业务对象。 由 Service 层输出的封装业务逻辑的对象。
+> - AO （ Application Object ）：应用对象。 在 Web 层与 Service 层之间抽象的复用对象模型，极为贴近展示层，复用度不高。
+> - VO （ View Object ）：显示层对象，通常是 Web 向模板渲染引擎层传输的对象。
+> - POJO （ Plain Ordinary Java Object ）：在本手册中，POJO 专指只有 setter/getter/toString 的简单类，包括 DO/DTO/BO/VO 等。
+>
+> ![image-20220216221201297](README.assets/image-20220216221201297.png)
+
+
 
 
 
@@ -106,7 +125,7 @@
 ## 在线书籍
 
 > 1. [凤凰架构](http://icyfenix.cn/introduction/about-the-fenix-project.html)
-> 2. 
+> 2. [Computer Networks](https://book.systemsapproach.org/)
 
 ## 在线文章
 
@@ -114,18 +133,32 @@
 
 ### en
 
-> 1. [哈夫曼编码是什么](https://www.baseclass.io/newsletter/huffman-coding)
-> 2. 
+> 1. **[Google Test Blogs](https://www.googblogs.com/category/google-testing-blog/)**
+> 1. [Huffman-coding](https://www.baseclass.io/newsletter/huffman-coding)
+> 2. [XOR-TRICK](https://florian.github.io/xor-trick/)
+> 2. [容器知识](https://iximiuz.com/en/posts/container-learning-path/)
+> 2. [Postgres Full-Text Search](https://blog.crunchydata.com/blog/postgres-full-text-search-a-search-engine-in-a-database)
+> 2. [SQL JOIN explained](https://dataschool.com/how-to-teach-people-sql/sql-join-types-explained-visually/)
 
 ## 在线课程
 
 > 1. [The Missing Semester of Your CS Education](https://missing.csail.mit.edu/) 
 > 2. [6.824](https://pdos.csail.mit.edu/6.824/schedule.html)
-> 3. 
+> 3. [ESCAPE data science 2021](https://github.com/escape2020/school2021)
 
 ## 好书
 
 
+
+## RFC
+
+###  rfc3986
+
+### rfc2616 
+
+### rfc6455
+
+### rfc7539
 
 # 其他
 
@@ -140,3 +173,10 @@
 ## 收藏网址
 
 > 1. [资源搜索教程](https://www.yuque.com/eureka007/ziyuan/zgh5wk)
+> 1. [猿人学 爬虫攻防刷题平台](https://match.yuanrenxue.com/list)
+> 1. [Create beautiful images of your code](https://ray.so/)
+> 1. [NeteaseCloudMusicApi](https://neteasecloudmusicapi.vercel.app/#/?id=neteasecloudmusicapi)
+> 1. [Compare with Programming](https://hyperpolyglot.org/)
+> 1. [建站安装命令](https://oneinstack.com/auto/)
+> 1. [刷题网站经验之谈](https://justyy.com/archives/31192)
+> 1. [GitBook 参考以及 Git操作](https://oreomeow.github.io/Gitbook/)
