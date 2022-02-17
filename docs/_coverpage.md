@@ -7,4 +7,4 @@
 * 后端数据接口：Express、MongoDB
 
 
-[Get Started](#Quick-Start)
+[Get Started](./README.md)
