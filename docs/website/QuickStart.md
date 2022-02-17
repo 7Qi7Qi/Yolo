@@ -29,5 +29,3 @@
 
 > 1. [VUE 可视化商城项目](https://github.com/wangyuan389/mall-cook)
 > 1. [Java简单实践项目](https://github.com/521xueweihan/HelloGitHub/blob/master/content/57/HelloGitHub57.md#Java-%E9%A1%B9%E7%9B%AE)
-
-# 
