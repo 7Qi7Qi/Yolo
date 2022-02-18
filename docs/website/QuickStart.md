@@ -8,6 +8,8 @@
 > 4. [CS-Note](https://github.com/CyC2018/CS-Notes)
 > 5. **[JCSprout](https://github.com/crossoverJie/JCSprout/tree/master/docs)**
 > 6. [未读代码](https://www.wdbyte.com/java/string-concat.html#_1-%E5%89%8D%E8%A8%80)
+> 7. [System Design](https://github.com/donnemartin/system-design-primer)
+> 8. [Code Top 类Leetcode](https://codetop.cc/home)
 
 ## Article To Read
 
