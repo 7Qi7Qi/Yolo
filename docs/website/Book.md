@@ -17,6 +17,7 @@
 > 2. [容器知识](https://iximiuz.com/en/posts/container-learning-path/)
 > 2. [Postgres Full-Text Search](https://blog.crunchydata.com/blog/postgres-full-text-search-a-search-engine-in-a-database)
 > 2. [SQL JOIN explained](https://dataschool.com/how-to-teach-people-sql/sql-join-types-explained-visually/)
+> 2. [Why You Should Use Constructor Injection in Spring](https://reflectoring.io/constructor-injection/)
 
 ## 在线课程
 
