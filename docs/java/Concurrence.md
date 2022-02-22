@@ -2,7 +2,7 @@
 
 ## java.util.concurrent
 
-### 信号量 Semaphore
+### [信号量 Semaphore](https://zhuanlan.zhihu.com/p/98593407)
 
 ##### 一、概念
 
@@ -11,3 +11,9 @@
 ##### 二、使用场景
 
 资源有明确访问数量限制的场景，常用于限流
+
+> 如数据库连接池、停车场场景。满了需要线程
+
+##### 三、常用方法
+
+> acquire()
