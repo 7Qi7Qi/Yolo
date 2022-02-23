@@ -24,7 +24,7 @@
 > 1. [The Missing Semester of Your CS Education](https://missing.csail.mit.edu/) 
 > 2. [6.824](https://pdos.csail.mit.edu/6.824/schedule.html)
 > 3. [ESCAPE data science 2021](https://github.com/escape2020/school2021)
-> 3. 
+> 3. [计算机视觉实战演练：算法与应用](https://github.com/Charmve/computer-vision-in-action)
 
 ## 好书
 
