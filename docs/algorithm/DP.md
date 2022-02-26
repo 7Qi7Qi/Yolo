@@ -2,6 +2,10 @@
 
 
 
+## 教程
+
+[OI Wiki --- DP](https://oi-wiki.org/dp/)
+
 ## [线性规划](https://github.com/SharingSource/LogicStack-LeetCode/wiki/%E7%BA%BF%E6%80%A7-DP)
 
 > 0217 daily [problem](https://leetcode-cn.com/problems/knight-probability-in-chessboard/solution/gong-shui-san-xie-jian-dan-qu-jian-dp-yu-st8l/)
