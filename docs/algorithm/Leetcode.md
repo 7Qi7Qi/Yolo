@@ -13,5 +13,11 @@
 > 3. [宫水三叶的刷题日记](https://github.com/SharingSource/LogicStack-LeetCode)
 > 4. [codeforces-go](https://github.com/EndlessCheng/codeforces-go)
 
-
 ## My Solutions
+
+
+
+## Mind Map
+
+![阿飞算法](../_assets/MyzuIE-阿飞算法.png)
+
