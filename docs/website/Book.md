@@ -9,6 +9,7 @@
 
 ### zh
 > 1. [语义化版本 2.0.0](https://semver.org/lang/zh-CN/) 
+> 1. [理解log4j shell漏洞](https://sspai.com/post/70394)
 
 ### en
 
