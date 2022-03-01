@@ -31,7 +31,5 @@
     <url>http://0.0.0.0/</url>
     <blocked>true</blocked>
     </mirror>
-   ```
-
-
-​      
+   ``` 
+   
