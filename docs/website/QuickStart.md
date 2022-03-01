@@ -10,8 +10,8 @@
 > 6. [未读代码](https://www.wdbyte.com/java/string-concat.html#_1-%E5%89%8D%E8%A8%80)
 > 7. [System Design](https://github.com/donnemartin/system-design-primer)
 > 8. [easy-cs](https://github.com/allentofight/easy-cs/)
-> 8. [Code Top 类Leetcode](https://codetop.cc/home)
-> 8. [美团技术团队](https://tech.meituan.com/)
+> 9. [Code Top 类Leetcode](https://codetop.cc/home)
+> 10. [美团技术团队](https://tech.meituan.com/)
 
 ## Article To Read
 
