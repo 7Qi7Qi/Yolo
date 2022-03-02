@@ -15,13 +15,14 @@
 
 ## Article To Read
 
-> - [ ] [AOP造火箭事件始末](https://github.com/allentofight/easy-cs/blob/main/Java/aop%E9%80%A0%E7%81%AB%E7%AE%AD%E4%BA%8B%E4%BB%B6%E5%A7%8B%E6%9C%AB.md)
-> - [ ] [图解HTTP常见问题](https://mp.weixin.qq.com/s/amOya0M00LwpL5kCS96Y6w)
-> - [ ] [Spring 常见问题](https://mp.weixin.qq.com/s/wcK2qsZxKDJTLIGqEIyaNg)
-> - [ ] [MySQL Explain](https://mp.weixin.qq.com/s/s3IvJ7bm03X49timtQ2e9Q)
-> - [ ] [Netty 可以做什么](https://www.zhihu.com/question/24322387)
-> - [ ] [查缺补漏 Redis的知识体系](https://juejin.cn/post/6857667542652190728)
-
+- [ ] [AOP造火箭事件始末](https://github.com/allentofight/easy-cs/blob/main/Java/aop%E9%80%A0%E7%81%AB%E7%AE%AD%E4%BA%8B%E4%BB%B6%E5%A7%8B%E6%9C%AB.md)
+- [ ] [图解HTTP常见问题](https://mp.weixin.qq.com/s/amOya0M00LwpL5kCS96Y6w)
+- [ ] [Spring 常见问题](https://mp.weixin.qq.com/s/wcK2qsZxKDJTLIGqEIyaNg)
+- [ ] [MySQL Explain](https://mp.weixin.qq.com/s/s3IvJ7bm03X49timtQ2e9Q)
+- [ ] [Netty 可以做什么](https://www.zhihu.com/question/24322387)
+- [ ] [查缺补漏 Redis的知识体系](https://juejin.cn/post/6857667542652190728)
+- [ ] [redis ](https://www.nowcoder.com/discuss/848513)
+- [ ] [Synchronized](https://www.nowcoder.com/discuss/839862)
 
 ## 面筋
 
