@@ -18,6 +18,18 @@
   + Spring框架提供的三级缓存来专门解决循环依赖
   + 构造函数注入会进入死循环
 
+#### Resource
+
+#### Transactional
+
++ 回滚rollbackFor()。默认是RuntimeException
+  + IOException不是RuntimeException子类，不会进行事务回滚
+```java
+@Transactional(rollbackFor = IOException.class)
+public class Clazz {
+    
+}
+```
 
 
 ## SpringCloud
