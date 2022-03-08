@@ -57,7 +57,11 @@ public class DeductInvalidFactory {
 }
 
 //using in code
-DeductInvalidService service = deductInvalidFactory.getInvalidHandler("businessType");
-service.handleInvalid(items);
+public class UsingExample {
+    public static void main(String[] args) {
+        DeductInvalidService service = deductInvalidFactory.getInvalidHandler("businessType");
+        service.handleInvalid(items);
+    } 
+}
 ```
 
