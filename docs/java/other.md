@@ -25,3 +25,11 @@ Runtime.getRuntime().addShutdownHook(new Thread(() -> {
 }))
 ```
 
+> 注册一个JVM关闭的钩子，当系统执行完这些钩子，jvm才会关闭。可以执行功能：内存清理、对象销毁、关闭连接等操作
+>
+> 1. 程序正常退出
+> 2. 使用System.exit()
+> 3. 终端使用Ctrl+C触发中断
+> 4. 系统关闭
+> 5. OOM宕机
+> 6. Kill pid 结束进程

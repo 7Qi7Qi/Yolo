@@ -84,3 +84,23 @@ public class MOuter {
 
 
 ### 接口
+
+#### Java8 接口新增了默认方法
+
+https://www.cnblogs.com/sum-41/p/10878807.html
+
+1. 例如：List接口新增了sort方法
+
+```java
+public interface List<E> extends Collection<E> {
+    //...其他成员
+    default void sort(Comparator<? super E> c) {
+        //logic code
+    }
+}
+```
+
+2. 需要使用接口实例来调用这些默认方法，default修饰符修饰
+3. 与抽象类区别
+   1. 一个类只能继承一个抽象类，但一个类可以实现多个接口
+   2. 抽象类有实例变量，而接口只能有类变量
