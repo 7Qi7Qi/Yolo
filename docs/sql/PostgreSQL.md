@@ -2,6 +2,15 @@
 
 >[diagoal blog](https://github.com/digoal/blog)
 
+## Aspect
+
+### CTE
+
+> 1. **Common Table Expression**
+> 2. 声明CTE的需要使用语法**WITH**
+> 3. 临时表，类似使用子查询时的派生表，可以用在insert、update等
+> 4. MySQL 8.0支持
+
 
 
 ## System Statement
