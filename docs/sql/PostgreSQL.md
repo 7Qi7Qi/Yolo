@@ -11,6 +11,11 @@
 > 3. 临时表，类似使用子查询时的派生表，可以用在insert、update等
 > 4. MySQL 8.0支持
 
+### 隔离级别
+
+1. 查看指令：show transaction isolation level
+   1. 默认级别：读已提交 Read-Committed
+   2. [其他详见](MySQL.md#隔离界别)
 
 
 ## System Statement

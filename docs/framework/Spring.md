@@ -48,7 +48,7 @@
 
 ###### 三、Setter Injection
 
-> 1. 也会用到**@Autowired** 注解，
+> 1. 也会用到@Autowired注解，
 > 2. 但使用方式与**Filed Injection**有所不同，Field Injection是用在成员变量上的，而Setter Injection是用在Setter函数上的。
 > 3. 就是通过调用成员变量的set方法来注入想要使用的依赖对象
 > 4. 相较于 **Field Injection** 测试性更好
