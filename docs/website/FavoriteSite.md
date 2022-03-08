@@ -2,7 +2,7 @@
 
 ## FFMPEG
 
-> [**FFMPEG.md**](../_refer/FFMPEG.md)
+> [**FFMPEG.md**](/_refer/FFMPEG.md)
 
 ## GitHub Actions
 
