@@ -35,8 +35,14 @@ WHERE
 	C.relname = 'erp_niche' 
 	AND A.attrelid = C.oid 
 	AND A.attnum >0
+	AND A.atttypid > 0
 ```
-
++ A.attnum > 0 过滤标识符
+  + xid(事务标识符) 
+  + oid(标识数据库对象，如数据库、库、视图等) 
+  + cid(命令标识符) 
+  + tid(行标识符) 
++ A.atttpid > 0 过滤 ........pg.dropped.xxx........
 ##### 二、查询正在运行的SQL语句
 
 ```sql
