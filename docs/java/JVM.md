@@ -30,3 +30,8 @@
    3. kinit、klist、ktab：kerberos管理工具
    4. jarsigner：签名、签名校验工具
 8. rmiregistry
+
+## OOM
+
+> VM Option: -Xmx30m -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/Java/logs
+> 
