@@ -2,6 +2,14 @@
 
 ## SpringBoot
 
+### Bean
+
+作用域：Prototype/Singleton/Request/Session/Global Session
+
+- Prototype：原型模式，每次获取bean都会创建以一个新的实例，因此不存在线程安全的问题。
+- Singleton：不同的线程访问同一个bean，如果这个bean中含有实例变量，并且线程具有对实例变量的写操作时，就会产生线程安全问题
+  - 解决：使用[ThreadLocal](../java/Concurrence.md#ThreadLocal)，为每个线程创建独立的变量副本，互相隔离互不影响
+
 ### 注解
 
 #### Autowired
@@ -91,6 +99,18 @@
 >    1. Constructor Injection 严格的顺序要求，会拉长启动时间
 
 #### Resource
+
+> javax.annotation.Resource
+
+##### 和Autowire区别
+
+> - Autowire
+>   - 默认通过类型注入，如果存在多个类型则通过名称注入
+>   - 可以使用@Primary定义类名，优先使用
+>   - 使用@Qualifier("xxx")，指定类名注入 （合格者）
+> - Resource
+>   - 默认使用名称注入，如果名称找不到，则通过类型注入
+> - bean默认是开头字母小写的类名
 
 #### Transactional
 
