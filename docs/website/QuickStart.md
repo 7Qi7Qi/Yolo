@@ -7,6 +7,7 @@
 - [ ] Redis
 - [ ] [crontab](https://blog.csdn.net/noaman_wgs/article/details/80984873) 
 - https://launchpad.redis.com/
+- [ ] 单例模式
 
 ## InterviewTop
 

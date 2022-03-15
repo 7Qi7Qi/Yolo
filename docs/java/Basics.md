@@ -109,3 +109,7 @@ public interface List<E> extends Collection<E> {
 3. 与抽象类区别
    1. 一个类只能继承一个抽象类，但一个类可以实现多个接口
    2. 抽象类有实例变量，而接口只能有类变量
+
+
+
+## 单例模式
