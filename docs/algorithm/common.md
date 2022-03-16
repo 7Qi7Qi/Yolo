@@ -1,5 +1,10 @@
 # 常见算法
 
+## 
+
+LFU(Least Frequently Used) 最不经常使用
+LRU(Least Recently Used) 最近最少使用
+
 ## 文章
 > 1. [Know Thy Complexities](https://www.bigocheatsheet.com/)
 

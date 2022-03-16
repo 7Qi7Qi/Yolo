@@ -2,6 +2,13 @@
 
 ## SpringBoot
 
+### 属性加载顺序(从高到低)
+
+1. 命令行参数，ex: java -jar -Dspring.profile.active
+2. 操作系统环境变量
+3. application.properties或application.yml
+4. @Configuration注解的类，@PropertySource注解的属性
+
 ### Bean
 
 作用域：Prototype/Singleton/Request/Session/Global Session
@@ -9,6 +16,7 @@
 - Prototype：原型模式，每次获取bean都会创建以一个新的实例，因此不存在线程安全的问题。
 - Singleton：不同的线程访问同一个bean，如果这个bean中含有实例变量，并且线程具有对实例变量的写操作时，就会产生线程安全问题
   - 解决：使用[ThreadLocal](../java/Concurrence.md#ThreadLocal)，为每个线程创建独立的变量副本，互相隔离互不影响
+- 只要Bean是无状态的则一定是线程安全的
 
 ### 注解
 
@@ -123,6 +131,44 @@ public class Clazz {
 }
 ```
 
+#### RequestParam & RequestBody
+
+##### RequestParam
+> 接收的参数是来自HTTP请求体或
+##### RequestBody
+
+
+### 依赖
+
+#### spring-boot-starter-parent
+1. Java版本
+```xml
+<properties>
+   <java.version>1.8</java.version>
+</properties>
+```
+2. 源码文件编码
+```xml
+<properties>
+  <project.build.sourceEncoding>GBK</project.build.sourceEncoding>
+</properties>
+```
+3. 依赖管理
+4. 打包支持
+5. 动态识别资源
+```xml
+<resource>
+  <directory>src/main/resources</directory>
+  <includes>
+    <include>**/*.*</include>
+  </includes>
+  <filtering>true</filtering>
+</resource>
+```
+6. 识别插件设置。如exec plugin,surefire,Git commit ID等
+7. 设别不同的配置。如application-dev.properties和 application-dev.yml
+
+有些继承自其父级spring-boot-dependencies
 
 ## SpringCloud
 

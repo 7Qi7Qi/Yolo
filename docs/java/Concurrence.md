@@ -62,3 +62,5 @@ class Main{
 
 ### ThreadLocal
 
+> 线程池对线程的复用会影响后续业务逻辑和造成内存泄漏，会复用ThreadLocal
+
