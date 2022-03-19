@@ -5,7 +5,7 @@
   + [并发](java/Concurrence.md)
   + [JVM](java/JVM.md)
   + [线程](java/Thread.md)
-  + [其他](java/other.md)
+  + [其他](java/otherAspect.md)
 + **Framework Tools**
   + [Spring](framework/Spring.md)
   + [Redis](framework/Redis.md)

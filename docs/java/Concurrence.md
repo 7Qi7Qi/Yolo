@@ -64,3 +64,20 @@ class Main{
 
 > 线程池对线程的复用会影响后续业务逻辑和造成内存泄漏，会复用ThreadLocal
 
+![image](../_assets/ThreadLocalMap.png)
+
+![image](../_assets/ThreadLocalMap_add.png)
+
+> 1. 栈内存属于单个线程，每个线程都会有个栈内存，其存储变量只能其所属的线程中可见，也可以理解成线程的私有内存。
+> 2. 堆内存的对象可以被所有线程访问
+> 3. ThreadLocal实例和值存在堆上，线程可见
+> 4. 共享线程的ThreadLocal数据
+>    1. 主线程创建InheritableThreadLocal()实例
+>    2. 子线程通过这个实例可以获得值
+> 5. ThreadLocal问题
+>    1. key被设计成弱引用WeakReference。key被gc了，但value还在。
+>    2. 内存泄漏
+>       1. 线程池的线程复用，之前线程实例处理完之后，出于复用目的线程依然存活，ThreadLocal的value值被持有，导致内存泄漏
+>       2. 解决：使用完，调用remove()，值清空
+>    3. 为什么key弱引用
+>       1. 会造成和entry中value一样的内存泄漏

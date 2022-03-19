@@ -58,3 +58,5 @@ public interface RejectedExecutionHandler {
 4. new ThreadPoolExecutor.DiscardOldestPolicy()
    1. 线程池等待任务移除队列头部元素（poll()方法），将新任务加到队列中
 5. 自定义策略，比如持久化多余的线程，用定时任务把持久化线程取出
+
+##
