@@ -1,13 +1,11 @@
 # Quick-Start
 
 ## Todo
-- [ ] MySQL Isolation Transaction
 - [ ] PostgreSQL Markdown
 - [ ] Java interface & abstract class
 - [ ] Redis
-- [ ] [crontab](https://blog.csdn.net/noaman_wgs/article/details/80984873) 
-- https://launchpad.redis.com/
 - [ ] 单例模式
+- [ ] OAuth2.0
 
 ## InterviewTop
 

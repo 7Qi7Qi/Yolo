@@ -2,7 +2,9 @@
 
 ## SpringBoot
 
-### 属性加载顺序(从高到低)
+### 属性加载顺序
+
+> 加载顺序是从高到低
 
 1. 命令行参数，ex: java -jar -Dspring.profile.active
 2. 操作系统环境变量
@@ -175,7 +177,47 @@ public class Clazz {
 > Spring采用ThreadLocal方式，来保证单个线程中的数据库操作使用的是同一个数据库连接，同时采用这种方式可以使业务层使用数据库时不需要感知并管理connection对象，通过传播级别，巧妙管理多个事务配置间的切换、挂起和恢复。
 
 > **主要用的就是ThreadLocal和AOP实现，**每个线程的链接都是靠ThreadLocal保存
+> 底层核心是**动态代理**
 
+#### 不生效
+1. Bean没有纳入Spring容器管理
+   1. （不是动态代理的Bean），里面方法是没有事务管理的
+
+2. 自调用
+   1. 调用当前类的方法，比如用this调用当前类的的方法
+
+   2. 原因：this.methodA()，没有走TestService的代理类，所以事务会失效
+
+   3. 解决
+      1. methodA()和methodB()分别放到不同的类中
+
+      2. 自己注入自己，用注入的实例调用
+
+      3. 获取动态代理类，调用自己类的方法
+
+         ```java
+         @Service
+         public class TestService{ 
+             
+             @Transactional
+             public void methodA(){
+                 
+             }
+             public void methodB() {
+               ((TestService)AopContext.currentProxy()).methodA();
+             }
+         } 
+         ```
+
+3. 异常没有抛出了，被try catch了
+
+4. 抛出的不是RuntimeException，而且没有指定rollbackFor=异常类型
+
+5. 事务方法不是public的，不会被动态代理
+
+6. 事务方法内启用新线程进行异步操作
+
+7. 数据库不支持事务
 #### 五种事务隔离级别
 
 | 隔离级别             | 说明                                                     |
@@ -197,6 +239,28 @@ public class Clazz {
 | **NOT_SUPPORTED** |                                                  |
 | **NEVER**         |                                                  |
 | **NESTED**        |                                                  |
+
+### AOP代理
+
+#### jdk代理
+
+
+
+#### cglib代理
+
+
+
+
+#### 相关方法
+
+```java
+//是否是代理对象
+AopUtils.isAopProxy(AopContext.currentProxy());
+//是否是cglib代理对象
+AopUtils.isCglibProxy(AopContext.currentProxy());
+//是否是jdk代理对象
+AopUtils.isJdkDynamicProxy(AopContext.currentProxy());
+```
 
 
 

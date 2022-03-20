@@ -21,6 +21,7 @@
 6. [SQL JOIN explained](https://dataschool.com/how-to-teach-people-sql/sql-join-types-explained-visually/)
 7. [Why You Should Use Constructor Injection in Spring](https://reflectoring.io/constructor-injection/)
 8. [WebSocket](https://ably.com/blog/introducing-the-websocket-handbook)
+9. [solving-word-regex](https://dov.is/notebooks/solving-wordle-regex.html)
 
 ## 在线课程
 
