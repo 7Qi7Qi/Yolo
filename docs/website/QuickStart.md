@@ -3,9 +3,11 @@
 ## Todo
 - [ ] PostgreSQL Markdown
 - [ ] Java interface & abstract class
-- [ ] Redis
+- [ ] [Redis](https://www.javashitang.com/md/redis/Redis%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%BA%E4%BB%80%E4%B9%88%E6%97%A2%E7%9C%81%E5%86%85%E5%AD%98%E5%8F%88%E9%AB%98%E6%95%88.html)
 - [ ] 单例模式
+- [ ] https://github.com/niumoo/down-bit
 - [ ] OAuth2.0
+- [ ] [MyBatis](https://www.javashitang.com/md/mybatis/MyBatis%E7%94%A8%E6%B3%95%E4%B8%80%E8%A7%88.html)
 
 ## InterviewTop
 
@@ -21,16 +23,17 @@
 
 ## 博客地址
 
-> 1. [Java 面试知识点解析(四)——版本特性篇](https://www.jianshu.com/p/9c50729464b5)
-> 2. [Spring源码解析](https://www.yuque.com/huifer/spring/vhvbs3)
-> 3. [Java面试+学习指南 - 敖丙](https://github.com/AobingJava/JavaFamily)
-> 4. [CS-Note](https://github.com/CyC2018/CS-Notes)
-> 5. **[JCSprout](https://github.com/crossoverJie/JCSprout/tree/master/docs)**
-> 6. [未读代码](https://www.wdbyte.com/java/string-concat.html#_1-%E5%89%8D%E8%A8%80)
-> 7. [System Design](https://github.com/donnemartin/system-design-primer)
-> 8. [easy-cs](https://github.com/allentofight/easy-cs/)
-> 9. [Code Top 类Leetcode](https://codetop.cc/home)
-> 10. [美团技术团队](https://tech.meituan.com/)
+1. [Java 面试知识点解析(四)——版本特性篇](https://www.jianshu.com/p/9c50729464b5)
+2. [小林Coding](https://xiaolincoding.com/)
+3. [CS-Note](https://github.com/CyC2018/CS-Notes)
+4. **[JCSprout](https://github.com/crossoverJie/JCSprout/tree/master/docs)**
+5. [Java识堂](https://www.javashitang.com/)
+6. [easy-cs](https://github.com/allentofight/easy-cs/)
+7. [Spring源码解析](https://www.yuque.com/huifer/spring/vhvbs3)
+8. [未读代码](https://www.wdbyte.com/java/string-concat.html#_1-%E5%89%8D%E8%A8%80)
+9. [Code Top 类Leetcode](https://codetop.cc/home)
+10. [美团技术团队](https://tech.meituan.com/)
+11. [System Design](https://github.com/donnemartin/system-design-primer)
 
 ## Article To Read
 
