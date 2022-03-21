@@ -22,8 +22,8 @@
 
 ## 案例
 
-[### 一、线上执行update语句修改数据库时，where条件没有带上索引，导致业务直接崩了
-](https://mp.weixin.qq.com/s/9R8ChusahrJvLGmUvHWBgA)
+### 一、线上执行update语句修改数据库时，where条件没有带上索引，导致业务直接崩了
+
 1. 前提：
    1. 基于InnoDB存储引擎,隔离级别是可重复读
 2. 原因：
@@ -44,4 +44,5 @@
       3. 同时使用where和limit，此时where可以没有索引列
    3. delete语句
       1. 使用where，且where条件必须带有索引列
-      2同时使用where和limit，此时where可以没有索引列
+      2. 同时使用where和limit，此时where可以没有索引列
+4. [链接](https://mp.weixin.qq.com/s/9R8ChusahrJvLGmUvHWBgA)
