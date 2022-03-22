@@ -24,8 +24,13 @@
 4. 调用时，先代理类进行增强，再**直接调用父类对应方法**，从而实现AOP
    1. 类被标记为final，无法使用CGLIB做动态代理的
    2. 除了目标子类代理类，还有个FastClass（路由类），可以（但不是必须）让本类方法调用进行增强，不会像jdk代理
-
+   
 > jdk生成类速度快，调用慢，cglib生成类速度慢，调用快。但jdk版本升级优化，cglib止步不前。 jdk性能比cglib好
+
+#### 相关方法
+1. 是否是代理对象: ``AopUtils.isAopProxy(AopContext.currentProxy());``
+2. 是否是cglib代理对象: ``AopUtils.isCglibProxy(AopContext.currentProxy())``
+3. 是否是jdk代理对象: ``AopUtils.isJdkDynamicProxy(AopContext.currentProxy());``
 
 ### 相关名词
 1. 切面 Aspect 切面类，管理切点和通知
@@ -43,7 +48,6 @@
 ### AspectJ
 
 #### Spring AOP使用
-
 1. Spring AOP 提供了AspectJ的支持，
 2. 但只用到了AspectJ的切点解析和匹配，及@Aspect、@Before等注解
 3. 在容器启动时需要生成代理实例，在方法的调用上也会增加栈的深度，使得Spring AOP 性能没有AspectJ那么好
@@ -55,7 +59,7 @@
 
 ## SpringIOC
 
-### 前言：控制反转
+### 控制反转
 1. new实例类，耦合度太高，维护不方便
 2. 引入IOC，将创建对象控制权交给了Spring，控制了对象的创建权利，Spring IOC去创建
 3. 要使用对象：需要通过DI（依赖注入）@Autowired，从容器中自动注入
@@ -70,18 +74,12 @@
 #### 反射
 通过反射，实例化创建Bean对象 ``BeanFactory.getBean(String className)``
 
-## SpringBoot
 
-### 属性加载顺序
+----
 
-> 加载顺序是从高到低
 
-1. 命令行参数，ex: java -jar -Dspring.profile.active
-2. 操作系统环境变量
-3. application.properties或application.yml
-4. @Configuration注解的类，@PropertySource注解的属性
 
-### Bean
+## Bean
 
 作用域：Prototype/Singleton/Request/Session/Global Session
 
@@ -90,11 +88,11 @@
   - 解决：使用[ThreadLocal](../java/Concurrence.md#ThreadLocal)，为每个线程创建独立的变量副本，互相隔离互不影响
 - 只要Bean是无状态的则一定是线程安全的
 
-### 注解
+## 注解
 
-#### Autowired
+### Autowired
 
-##### required属性
+#### required属性
 + **@Autowired(required = true)**
   + 默认是true，表示注入的时候，该bean必须存在，否则会注入失败
 + **@Autowired(required = false)**
@@ -104,9 +102,9 @@
   + Spring框架提供的三级缓存来专门解决循环依赖
   + 构造函数注入会进入死循环
 
-##### 依赖注入方式
+#### 依赖注入方式
 
-###### 一、Field Injection
+##### 一、Field Injection
 
 > **@Autowired**
 >
@@ -120,7 +118,7 @@
 > }
 > ```
 
-###### 二、Construction Injection （推荐）
+##### 二、Construction Injection （推荐）
 
 > 通过对象构造的时候建立关系，所以对对象创建的顺序有要求。当然Spring会为你搞定这样的先后顺序，除非出现循环依赖，然后就会抛出异常
 >
@@ -134,7 +132,7 @@
 > }
 > ```
 
-###### 三、Setter Injection
+##### 三、Setter Injection
 
 > 1. 也会用到@Autowired注解，
 > 2. 但使用方式与**Filed Injection**有所不同，Field Injection是用在成员变量上的，而Setter Injection是用在Setter函数上的。
@@ -155,7 +153,7 @@
 >
 > 
 
-###### 对比
+##### 对比
 
 | 注入方式              | 可靠性 | 可维护性 | 可测试性 | 灵活性 | 循环关系检测 | 性能影响 |
 | --------------------- | :----: | :------: | :------: | :----: | :----------: | :------: |
@@ -178,11 +176,11 @@
 > 5. 性能影响
 >    1. Constructor Injection 严格的顺序要求，会拉长启动时间
 
-#### Resource
+### Resource
 
 > javax.annotation.Resource
 
-##### 和Autowire区别
+#### 和Autowire区别
 
 > - Autowire
 >   - 默认通过类型注入，如果存在多个类型则通过名称注入
@@ -192,7 +190,7 @@
 >   - 默认使用名称注入，如果名称找不到，则通过类型注入
 > - bean默认是开头字母小写的类名
 
-#### Transactional
+### Transactional
 
 + 回滚rollbackFor()。默认是RuntimeException
   + IOException不是RuntimeException子类，不会进行事务回滚
@@ -203,16 +201,16 @@ public class Clazz {
 }
 ```
 
-#### RequestParam & RequestBody
+### RequestParam & RequestBody
 
-##### RequestParam
+#### RequestParam
 > 接收的参数是来自HTTP请求体或
-##### RequestBody
+#### RequestBody
 
 
-### 依赖
+## 依赖
 
-#### spring-boot-starter-parent
+### spring-boot-starter-parent
 1. Java版本
 ```xml
 <properties>
@@ -242,14 +240,14 @@ public class Clazz {
 
 有些继承自其父级spring-boot-dependencies
 
-### 事务
+## 事务
 
 > Spring采用ThreadLocal方式，来保证单个线程中的数据库操作使用的是同一个数据库连接，同时采用这种方式可以使业务层使用数据库时不需要感知并管理connection对象，通过传播级别，巧妙管理多个事务配置间的切换、挂起和恢复。
 
 > **主要用的就是ThreadLocal和AOP实现，**每个线程的链接都是靠ThreadLocal保存
 > 底层核心是**动态代理**
 
-#### 不生效
+### 不生效
 1. Bean没有纳入Spring容器管理
    1. （不是动态代理的Bean），里面方法是没有事务管理的
 
@@ -288,7 +286,7 @@ public class Clazz {
 6. 事务方法内启用新线程进行异步操作
 
 7. 数据库不支持事务
-#### 五种事务隔离级别
+### 五种事务隔离级别
 
 | 隔离级别             | 说明                                                     |
 | -------------------- | -------------------------------------------------------- |
@@ -298,7 +296,7 @@ public class Clazz {
 | **REPEATABLE_READ**  | 可重复读：可以防止脏读、不可重复读。但会幻读             |
 | **SERIALIZABLE**     | 串行化：最高隔离级别最可靠                               |
 
-#### 七种事务传播行为
+### 七种事务传播行为
 
 | 传播行为          | 说明                                             |
 | ----------------- | ------------------------------------------------ |
@@ -310,25 +308,15 @@ public class Clazz {
 | **NEVER**         |                                                  |
 | **NESTED**        |                                                  |
 
-### AOP代理
+---
 
-#### jdk代理
+## Other
 
+### SpringBoot属性加载顺序
 
+> 加载顺序是从高到低
 
-#### cglib代理
-
-
-
-
-#### 相关方法
-
-1. 是否是代理对象: ``AopUtils.isAopProxy(AopContext.currentProxy());``
-2. 是否是cglib代理对象: ``AopUtils.isCglibProxy(AopContext.currentProxy())``
-3. 是否是jdk代理对象: ``AopUtils.isJdkDynamicProxy(AopContext.currentProxy());``
-
-
-
-
-## SpringCloud
-
+1. 命令行参数，ex: java -jar -Dspring.profile.active
+2. 操作系统环境变量
+3. application.properties或application.yml
+4. @Configuration注解的类，@PropertySource注解的属性
