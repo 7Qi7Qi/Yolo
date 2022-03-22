@@ -1,5 +1,75 @@
 # Spring
 
+## AOP
+
+### 简述
+1. 概念：Aspect-Oriented Programming，一般称为面向切面编程。 
+2. 目的：用于将那些与业务无关的，但却对多个对象产生影响的公共行为和逻辑，抽取并封装为一个可重用的模块，这个模块被称为切面（Aspect） 
+3. 用途：权限认证、日志、事务处理等，作为面向对象的一种补充 
+4. 好处：减少重复代码，提高系统可维护性，降低模块间的耦合度 
+5. 原理：使用的是动态代理
+
+### 动态代理
+
+#### JDK动态代理
+1. **只提供接口代理，不支持类代理**
+2. 运行时生成动态代理类 $proxy.class
+3. 代理类实现了目标类接口，并且实现接口类所有方法增强代码
+4. 调用时，通过代理类先去调用处理类进行增强，再通过反射方式调用目标类的方法，从而实现AOP
+
+#### CGLIB动态代理
+1. **没有实现接口**
+2. 通过**ASM**在运行时动态生成目标类的一个**子类**，(还有相关类，主要是为了增强调用时效率)会生成多个
+3. 会重写**父类**所有的方法增强代码
+4. 调用时，先代理类进行增强，再**直接调用父类对应方法**，从而实现AOP
+   1. 类被标记为final，无法使用CGLIB做动态代理的
+   2. 除了目标子类代理类，还有个FastClass（路由类），可以（但不是必须）让本类方法调用进行增强，不会像jdk代理
+
+> jdk生成类速度快，调用慢，cglib生成类速度慢，调用快。但jdk版本升级优化，cglib止步不前。 jdk性能比cglib好
+
+### 相关名词
+1. 切面 Aspect 切面类，管理切点和通知
+2. 连接点 Join Point 被增强的业务方法
+3. 通知 Advice 需要增加到业务方法中的公共代码和逻辑
+4. 切点 Pointcut 决定那些方法需要增强，那些不需要。结合切点表达式
+5. 目标对象 Target Object 增强的对象
+6. 织入 Weaving Aspectj独有的，Spring aop织入方式是动态代理。
+   1. 编译器
+   2. 类加载期
+   3. 运行期
+7. 其他
+   1. Advisor 顾问。是Pointcut和Advice的一个结合
+
+### AspectJ
+
+#### Spring AOP使用
+
+1. Spring AOP 提供了AspectJ的支持，
+2. 但只用到了AspectJ的切点解析和匹配，及@Aspect、@Before等注解
+3. 在容器启动时需要生成代理实例，在方法的调用上也会增加栈的深度，使得Spring AOP 性能没有AspectJ那么好
+
+#### AspectJ本身
+> AspectJ 是静态代理增强，编译阶段生成AOP代理类，编译时增强。 
+> 编译阶段将切面织入到Java字节码中，运行的是增强后的AOP对象
+> 使用的话，需要使用AspectJ编译器。 ``xxx.aj; aspect``
+
+## SpringIOC
+
+### 前言：控制反转
+1. new实例类，耦合度太高，维护不方便
+2. 引入IOC，将创建对象控制权交给了Spring，控制了对象的创建权利，Spring IOC去创建
+3. 要使用对象：需要通过DI（依赖注入）@Autowired，从容器中自动注入
+
+### 优点
+> 集中管理对象，方便维护，降低耦合度
+
+### 实现机制
+
+#### 工厂模式
+``BeanFactory.getBean(String beanName)``
+#### 反射
+通过反射，实例化创建Bean对象 ``BeanFactory.getBean(String className)``
+
 ## SpringBoot
 
 ### 属性加载顺序
@@ -44,7 +114,7 @@
 >
 > ```java
 > @Controller
-> public class UserCotroller {
+> public class UserController {
 >  @Autowired
 >  private UserService userService;
 > }
@@ -193,7 +263,7 @@ public class Clazz {
 
       2. 自己注入自己，用注入的实例调用
 
-      3. 获取动态代理类，调用自己类的方法
+      3. 获取动态代理类，调用自己类的方法 且设置暴露当前代理对象到本地线程(``@EnableAspectJAutoProxy(expostProxy=true)``)
 
          ```java
          @Service
@@ -253,14 +323,10 @@ public class Clazz {
 
 #### 相关方法
 
-```java
-//是否是代理对象
-AopUtils.isAopProxy(AopContext.currentProxy());
-//是否是cglib代理对象
-AopUtils.isCglibProxy(AopContext.currentProxy());
-//是否是jdk代理对象
-AopUtils.isJdkDynamicProxy(AopContext.currentProxy());
-```
+1. 是否是代理对象: ``AopUtils.isAopProxy(AopContext.currentProxy());``
+2. 是否是cglib代理对象: ``AopUtils.isCglibProxy(AopContext.currentProxy())``
+3. 是否是jdk代理对象: ``AopUtils.isJdkDynamicProxy(AopContext.currentProxy());``
+
 
 
 
