@@ -1,6 +1,7 @@
 # PostgreSQL
 
->[diagoal blog](https://github.com/digoal/blog)
+> [diagoal blog](https://github.com/digoal/blog)
+> [PostgrSQL & MySQL](https://www.zhihu.com/question/31955622)
 
 ## Aspect
 
