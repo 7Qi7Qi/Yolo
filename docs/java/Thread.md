@@ -59,4 +59,19 @@ public interface RejectedExecutionHandler {
    1. 线程池等待任务移除队列头部元素（poll()方法），将新任务加到队列中
 5. 自定义策略，比如持久化多余的线程，用定时任务把持久化线程取出
 
-##
+## Thread
+
+### sleep方法和wait方法区别
+1. 所属类和方法类型不同：Thread.sleep() ; new Object().wait()
+2. 使用语法不同：
+   1. sleep可以直接使用
+   2. wait方法需要先拿到锁，才可以调object.wait()
+3. 唤醒方式不同
+   1. sleep 需要指定时间
+   2. wait 可以传时间，也可以不传时间；或者使用notify() /notifyAll()
+4. 释放锁资源不同
+   1. sleep 休眠时不会释放锁资源
+   2. wait 休眠时会释放锁资源
+5. 线程状态不同
+   1. sleep: TIMED_WAITING
+   2. wait: WAITING
