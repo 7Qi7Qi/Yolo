@@ -33,7 +33,7 @@
     + Materialize：~~物化节点，行高速~~缓存
 
 ```sql
-EXPLAIN(FORMAT JSON) select * from erp_project
-EXPLAIN ( ANALYZE ) SELECT * FROM	erp_project
-EXPLAIN select * from erp_project
+EXPLAIN(FORMAT JSON) select * FROM erp_project;
+EXPLAIN ( ANALYZE ) SELECT * FROM erp_project;
+EXPLAIN select * FROM erp_project;
 ```

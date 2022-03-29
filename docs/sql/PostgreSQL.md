@@ -3,7 +3,7 @@
 > [diagoal blog](https://github.com/digoal/blog)
 > [PostgrSQL & MySQL](https://www.zhihu.com/question/31955622)
 
-## Aspect
+## Points
 
 ### CTE
 
@@ -17,6 +17,16 @@
 1. 查看指令：show transaction isolation level
    1. 默认级别：读已提交 Read-Committed
    2. [其他详见](MySQL.md#隔离界别)
+
+## Page
+
+| 分页方法         | 耗时   | 业务排序 | 业务过滤 | 跳转指定页 | 是否精确 |
+|--------------|------|------|------|-------|------|
+| LIMIT-OFFSET | 线性增加 | √    | √    | √     | √    |
+| Keyset       | 一般   | √    | √    | ×     | √    |
+| xmin         | 快    | ×    | √    | √     | ×    |
+| ctid         | 很快   | ×    | ×    | √     | √    |
+| pg_stats     | 快    | √    | ×    | √     | ×    |
 
 
 ## System Statement
