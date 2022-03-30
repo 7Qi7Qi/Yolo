@@ -46,3 +46,31 @@
       1. 使用where，且where条件必须带有索引列
       2. 同时使用where和limit，此时where可以没有索引列
 4. [链接](https://mp.weixin.qq.com/s/9R8ChusahrJvLGmUvHWBgA)
+
+
+
+### 二、如何实现跨库的联表查询
+
+1. 在同一个服务器下的两个不同的逻辑数据库。表前面加数据库名即可
+```sql
+ select * from orders o left join userdb.user u on o.uid = u.id
+```
+2. 在不同的服务器下的不同数据库
+   1. ``show engines``
+      1. 添加 ``federated``
+      2. 需要 ``federated  YES``
+   2. 远程数据库表映射到本地数据库，类似oracle的dblink
+   ```sql
+   create table `orders` (
+   ...
+   ) ENGINE = FEDERATED AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
+   CONNECTION = 'mysql://root:123456@127.0.0.1:3306/orderdb/orders'
+   ```
+   3. 注意事项
+      1. 不推荐使用，老项目过渡可以
+      2. 本地表结构必须和远程完全一样
+      3. 远程数据库只支持连接MySQL
+      4. 不支持事务
+      5. 不支持表结构修改
+      6. 本地更新，远程表也会更新，反之亦然
+      7. 删除本地表。远程表不会删除
