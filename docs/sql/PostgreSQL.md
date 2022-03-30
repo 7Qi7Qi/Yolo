@@ -7,10 +7,11 @@
 
 ### CTE
 
-> 1. **Common Table Expression**
-> 2. 声明CTE的需要使用语法**WITH**
-> 3. 临时表，类似使用子查询时的派生表，可以用在insert、update等
-> 4. MySQL 8.0支持
+1. **Common Table Expression**
+2. 通用表表达式
+3. 声明CTE的需要使用语法**WITH**
+4. 可以当作一个为查询而存在的临时表，类似使用子查询时的派生表，可以用在insert、update等
+5. MySQL 8.0支持
 
 ### 隔离级别
 
