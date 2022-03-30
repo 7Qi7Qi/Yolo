@@ -81,12 +81,21 @@
 
 ## Bean
 
+### 作用域
 作用域：Prototype/Singleton/Request/Session/Global Session
 
 - Prototype：原型模式，每次获取bean都会创建以一个新的实例，因此不存在线程安全的问题。
 - Singleton：不同的线程访问同一个bean，如果这个bean中含有实例变量，并且线程具有对实例变量的写操作时，就会产生线程安全问题
   - 解决：使用[ThreadLocal](../java/Concurrence.md#ThreadLocal)，为每个线程创建独立的变量副本，互相隔离互不影响
 - 只要Bean是无状态的则一定是线程安全的
+
+### 加载方式
+
+1. 使用``@Component``注解 和``@ComponentScan``对其进行扫描
+2. 在配置类中(``@Configuration``)，使用``@Bean``注解，将方法返回值加载到容器中
+3. 类上声明``@Import(User.class)``
+
+----
 
 ## 注解
 
@@ -207,6 +216,16 @@ public class Clazz {
 > 接收的参数是来自HTTP请求体或
 #### RequestBody
 
+
+### JavaConfig
+
+注解的方式开发，代替xml 
+1. @Configuration 
+2. @Bean 
+3. @ComponentScan 
+4. @EnableWebMvc 
+5. @ImportResource 
+6. @PropertySource
 
 ## 依赖
 
