@@ -3,7 +3,28 @@
 ## Execute Order
 ![SQL执行顺序](../_assets/sql-execute-order.jpg)
 
-## MySQL explain
+## [MySQL explain](https://mp.weixin.qq.com/s/s3IvJ7bm03X49timtQ2e9Q)
+
+> explain select * from servers;
+
+| id   | select_type | table   | type | possible_keys | key  | key_len | ref  | rows | Extra |
+| ---- | ----------- | ------- | ---- | ------------- | ---- | ------- | ---- | ---- | ----- |
+| 1    | SIMPLE      | servers | ALL  | NULL          | NULL | NULL    | NULL | 1    | NULL  |
+
+1 row in set (0.03 sec)
+
+| 列名          | 说明     |
+| ------------- | -------- |
+| id            | 执行编号 |
+| select_type   |          |
+| table         |          |
+| type          |          |
+| possible_keys |          |
+| key           |          |
+| key_len       |          |
+| ref           |          |
+| rows          |          |
+| Extra         |          |
 
 
 
@@ -33,7 +54,7 @@
     + Materialize：~~物化节点，行高速~~缓存
 
 ```sql
-EXPLAIN(FORMAT JSON) select * from erp_project
-EXPLAIN ( ANALYZE ) SELECT * FROM	erp_project
-EXPLAIN select * from erp_project
+EXPLAIN(FORMAT JSON) select * FROM erp_project;
+EXPLAIN ( ANALYZE ) SELECT * FROM erp_project;
+EXPLAIN select * FROM erp_project;
 ```

@@ -16,6 +16,8 @@ redis 用户信息，字典
 
 https://mp.weixin.qq.com/s/F18LDf2HUEJOfc8lOnnYUQ
 
+sharding-jdbc
+https://github.com/allentofight/easy-cs/blob/main/Java/Sharding-JDBC%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95%E5%92%8C%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86.md
 
 任务调度：
 

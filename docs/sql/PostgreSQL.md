@@ -1,21 +1,33 @@
 # PostgreSQL
 
->[diagoal blog](https://github.com/digoal/blog)
+> [diagoal blog](https://github.com/digoal/blog)
+> [PostgrSQL & MySQL](https://www.zhihu.com/question/31955622)
 
-## Aspect
+## Points
 
 ### CTE
 
-> 1. **Common Table Expression**
-> 2. 声明CTE的需要使用语法**WITH**
-> 3. 临时表，类似使用子查询时的派生表，可以用在insert、update等
-> 4. MySQL 8.0支持
+1. **Common Table Expression**
+2. 通用表表达式
+3. 声明CTE的需要使用语法**WITH**
+4. 可以当作一个为查询而存在的临时表，类似使用子查询时的派生表，可以用在insert、update等
+5. MySQL 8.0支持
 
 ### 隔离级别
 
 1. 查看指令：show transaction isolation level
    1. 默认级别：读已提交 Read-Committed
    2. [其他详见](MySQL.md#隔离界别)
+
+## Page
+
+| 分页方法         | 耗时   | 业务排序 | 业务过滤 | 跳转指定页 | 是否精确 |
+|--------------|------|------|------|-------|------|
+| LIMIT-OFFSET | 线性增加 | √    | √    | √     | √    |
+| Keyset       | 一般   | √    | √    | ×     | √    |
+| xmin         | 快    | ×    | √    | √     | ×    |
+| ctid         | 很快   | ×    | ×    | √     | √    |
+| pg_stats     | 快    | √    | ×    | √     | ×    |
 
 
 ## System Statement
