@@ -5,7 +5,13 @@
 
 1. 查看指令：``show variables like 'transaction_isolation'``
    1. 默认是 可以重复读 ``Repeatable-Read``
-
+   2. 推荐使用 读已提交 ``Read Committed``
+2. 
+ 
+> 默认可重复读原因:
+> 那Mysql在5.0这个版本以前，binlog只支持STATEMENT这种格式！
+> 而这种格式在读已提交(Read Committed)这个隔离级别下主从复制是有bug的
+> 因此Mysql将可重复读(Repeatable Read)作为默认的隔离级别！
 ## 索引
 
 
@@ -20,6 +26,16 @@
 6. where字句中，如果OR前面的条件列是索引列，但OR后的条件列不是索引列，那么索引会失效，全表扫描。
 
 
+## 语句
+
+### truncate、drop、delete 对比
+1. truncate和drop是ddl语句，执行无法回滚；delete是dml语句，可以回滚
+2. truncate只能作用于表；delete和drop可以作用于表、视图等
+3. truncate会清空表内所有行，但保留表结构及其约束、索引等；drop会删除表结构及其约束索引等
+4. truncate会重置表的自增值；delete不会
+5. truncate不会激活触发器；delete会
+6. truncate后会使得表和索引占的空间释放恢复；delete不会；drop语句会将表占用空间全部释放
+ 
 ## 案例
 
 ### 一、线上执行update语句修改数据库时，where条件没有带上索引，导致业务直接崩了
@@ -74,3 +90,4 @@
       5. 不支持表结构修改
       6. 本地更新，远程表也会更新，反之亦然
       7. 删除本地表。远程表不会删除
+
