@@ -9,6 +9,8 @@
 > + 匿名内部类：只能使用一次，没有类名，只能访问外部类的final变量
 > + 静态内部类：类似类的静态成员变量
 
+![image-20220405162113568](../_assets/inner-class.png)
+
 #### 一、成员内部类，也称作普通内部类
 
 ```java
@@ -92,7 +94,7 @@ public class MOuter {
 
 #### Java8 接口新增了默认方法
 
-https://www.cnblogs.com/sum-41/p/10878807.html
+
 
 1. 例如：List接口新增了sort方法
 
