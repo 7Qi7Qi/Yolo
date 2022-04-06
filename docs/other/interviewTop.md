@@ -1,4 +1,48 @@
 
+### Java方法冲突
+
+1. 原因 
+   1. 一个类可以实现多个接口，java8起可以定义静态方法，使用default关键字
+   2. 可能会有相同签名的方法的实现，即方法冲突 
+2. 如果发生方法冲突，java会调用优先级高的方法
+   1. 总结：越具体越优先，越抽象的或离本类越远的优先级越低
+   2. 类的优先级比接口高
+   3. 子类的优先级比父类高
+   4. 相同优先级
+      1. 本类就必须重写方法，来显示的选择方法实现。 
+      2. ``父类名.super.方法名()``
+      3. 不指定，编译会出错
+
+
+```java
+public interface D extends A, B {
+    @Override
+    default void run() {
+        System.out.print("D run");
+    }
+}
+public class Son implements A, B, D {
+
+    public static void main(String[] args) {
+        new Son().run(); //打印 D run，优先调用子接口方法
+    }
+}
+```
+
+```java
+public class Son implements A, B {
+
+    public static void main(String[] args) {
+        new Son().run();
+    }
+    
+    @Override
+    public void run() {
+        A.super.run(); //打印 A run
+    }
+}
+```
+
 
 ### 内存溢出和内存泄漏
 
