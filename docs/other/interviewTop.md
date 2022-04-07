@@ -63,3 +63,10 @@ public class Son implements A, B {
 2. 内核态是操作系统管理程序执行时所处的状态，能够执行包含特权指令在内的一系列指令，能够访问系统内所有的存储空间
 3. 用户态是用户程序执行时处理器所在的状态，不能执行特权指令，只能访问用户地址空间
 4. 用户程序运行在用户态，操作系统内核运行在内核态
+
+### 集合并行流中的Spring事务会生效吗？
+
+1. parallelStream()：``ForkJoinPool.commonPool.worker``
+2. 一般来说并行流会新建线程去执行方法，而Spring的事务只会保证主线程的事务会回滚，其他线程事务不会回滚
+3. ThreadLocal实现的事务（保存的数据库连接）。 [详见](../framework/Spring.md#事务)
+4. 所以不要再并行流中使用ThreadLocal、数据库事务

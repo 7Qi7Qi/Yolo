@@ -12,11 +12,31 @@
   + ThreadPoolExecutor.java
 + submit既可以提交Runnable，返回值null；也可以提交Callable，返回值Future
   + AbstractExecutorService.java
+  + Callable是设置如何产生结果，Future用来获取结果
 + 执行遇到异常
   + execute 会直接抛出
   + submit 不会直接抛出，需要使用Future.get()回去返回值时才抛出。
 
-#### ThreadPoolExecutor#execute
+### Executors
+
+#### 类型
+
+1. SingleThreadExecutor：单线程的线程池
+2. FixedThreadPool：固定大小的线程池
+3. CachedThreadPool：核心线程数为0，可以服用之前创建但现在空闲的线程的线程池
+4. ScheduledThreadPool：支持定时及周期性执行任务的线程池
+5. WorkingStealingPool：java1.8之后，自动调用系统可用的线程数，并行执行任务
+
+#### 弊端
+
+1. ``FixedThreadPool``和``SingleThreadPool``：允许请求的队列长度为Integer.MAX_VALUE，可能会堆积大量请求，导致oom
+2. ``CachedThreadPool``：允许创建的线程数量为Integer.MAX_VALUE，可能 创建大量线程，导致oom
+
+> 推荐通过``ThreadPoolExecutor``方式来实现线程池
+
+### ThreadPoolExecutor
+
+#### execute方法
 
 >  Proceed in 3 steps:
 >
@@ -37,8 +57,8 @@
 >  thread.  If it fails, we know we are shut down or saturated
 >   and so reject the task.
 
+#### 拒绝策略
 
-### 拒绝策略
 + RejectedExecutionHandler，任务处理不过来时，拒绝策略
 
 ```java
