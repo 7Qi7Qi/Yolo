@@ -1,7 +1,7 @@
 # PostgreSQL
 
 > [diagoal blog](https://github.com/digoal/blog)
-> [PostgrSQL & MySQL](https://www.zhihu.com/question/31955622)
+> [PostgreSQL & MySQL](https://www.zhihu.com/question/31955622)
 > [PostgreSQL 事故分析](https://liujiacai.net/blog/2022/02/24/hairy-pg-incident-lessons/)
 
 ## Points
