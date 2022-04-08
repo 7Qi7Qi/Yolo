@@ -7,7 +7,7 @@
    1. 默认是 可以重复读 ``Repeatable-Read``
    2. 推荐使用 读已提交 ``Read Committed``
 2. 
- 
+
 > 默认可重复读原因:
 > 那Mysql在5.0这个版本以前，binlog只支持STATEMENT这种格式！
 > 而这种格式在读已提交(Read Committed)这个隔离级别下主从复制是有bug的
@@ -35,7 +35,7 @@
 4. truncate会重置表的自增值；delete不会
 5. truncate不会激活触发器；delete会
 6. truncate后会使得表和索引占的空间释放恢复；delete不会；drop语句会将表占用空间全部释放
- 
+
 ## 案例
 
 ### 一、线上执行update语句修改数据库时，where条件没有带上索引，导致业务直接崩了
@@ -91,3 +91,49 @@
       6. 本地更新，远程表也会更新，反之亦然
       7. 删除本地表。远程表不会删除
 
+----
+
+
+
+## 函数
+
+## 字符串
+
+#### 字符串截取
+
+1. SUBSTRING
+   1. SUBSTRING(s, start, length)
+   2. 从字符串s的start位置截取长度length的字符串
+2. LEFT
+   1. LEFT(s,n)
+   2. 返回字符串s的后前个字符
+3. RIGHT：同上
+4. MID：
+   1. MID(s, n, len)
+   2. 从字符串s的n位置截取长度为len的字符串
+   3. 同SUBSTRING(s, n, len)
+
+#### 聚合函数
+
+1. GROUP_CONCAT
+   1. GROUP_CONCAT([DISTINCT] field [order by field])
+   2.   字符串聚合函数，可去重，可加排序，与group by连用
+
+#### 其他
+
+1. RLIKE
+
+   1. RLIKE 'pattern'
+   2. REGEXP执行字符串表达式模式匹配
+   3. ^ 开始、$ 结束、| 或者、
+
+   ```sql
+   select 
+       * 
+   from 
+       patients 
+   where 
+       conditions rlike '^DIAB1|.*\\sDIAB1$'
+   ```
+
+   

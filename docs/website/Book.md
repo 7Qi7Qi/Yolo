@@ -23,6 +23,7 @@
 8. [WebSocket](https://ably.com/blog/introducing-the-websocket-handbook)
 9. [solving-word-regex](https://dov.is/notebooks/solving-wordle-regex.html)
 10. [markov-chains](https://setosa.io/blog/2014/07/26/markov-chains/)
+11. [OAuth](https://fusionauth.io/learn/expert-advice/oauth/modern-guide-to-oauth)
 
 ## 在线课程
 
