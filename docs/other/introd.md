@@ -1,7 +1,8 @@
 https://paper.pig4cloud.com/
 
-java gc
-内存泄漏
+- [ ] java gc
+- [ ] 内存泄漏
+- [ ] redis
 
 基于OAuth2.0
 
