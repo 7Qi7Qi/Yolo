@@ -2,7 +2,6 @@ https://paper.pig4cloud.com/
 
 - [ ] java gc
 - [ ] 内存泄漏
-- [ ] redis
 - [ ] 多线程简单实现
 
 基于OAuth2.0
