@@ -2,10 +2,6 @@
 
 ## Todo
 - [ ] PostgreSQL Markdown
-- [ ] Java interface & abstract class
-- [ ] [Redis](https://www.javashitang.com/md/redis/Redis%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%BA%E4%BB%80%E4%B9%88%E6%97%A2%E7%9C%81%E5%86%85%E5%AD%98%E5%8F%88%E9%AB%98%E6%95%88.html)
-- [ ] 单例模式
-- [ ] OAuth2.0
 - [ ] [MyBatis](https://www.javashitang.com/md/mybatis/MyBatis%E7%94%A8%E6%B3%95%E4%B8%80%E8%A7%88.html)
 
 ## InterviewTop
@@ -54,9 +50,12 @@
 
 ## 项目栗子
 
-> 1. [VUE 可视化商城项目](https://github.com/wangyuan389/mall-cook)
-> 1. [Java简单实践项目](https://github.com/521xueweihan/HelloGitHub/blob/master/content/57/HelloGitHub57.md#Java-%E9%A1%B9%E7%9B%AE)
-
+1. [VUE 可视化商城项目](https://github.com/wangyuan389/mall-cook)
+2. [Java简单实践项目](https://github.com/521xueweihan/HelloGitHub/blob/master/content/57/HelloGitHub57.md#Java-%E9%A1%B9%E7%9B%AE)
+3. [有意思的项目](https://myblackboxrecorder.com/my-school-days-project/)
+   1. mini sql
+   2. wiki 
+   3. jhplayer
 
 
 ## 项目Complex
