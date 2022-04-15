@@ -24,8 +24,23 @@ select no, regexp_replace( classification_name, '（\w+）', '\1', 'g' )  from e
 ```
 
 
+# 其他函数列表
 
+## 加密、解密
++ 加密：encrypt(data bytea, key bytea, type text) 
++ 解密：decrypt(data bytea, key bytea, type text)
 
+```sql
+SELECT
+	encode( encrypt ( 'abcd1234', '0123456789ABHAEQ', 'aes' ), 'base64' );
+SELECT
+	encode( decrypt ( decode( 'IlBruWclssA3y9oOsgMQpw==', 'base64' ), '0123456789ABHAEQ', 'aes' ), 'escape' )
+```
+
+## 编码、解码
++ encode(str, passwd_str)
++ decode(str, passwd_str)
++ 编码、解码方式：base64、hex、escape
 
 ------
 

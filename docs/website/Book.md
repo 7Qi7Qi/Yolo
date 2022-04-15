@@ -24,6 +24,7 @@
 9. [solving-word-regex](https://dov.is/notebooks/solving-wordle-regex.html)
 10. [markov-chains](https://setosa.io/blog/2014/07/26/markov-chains/)
 11. [OAuth](https://fusionauth.io/learn/expert-advice/oauth/modern-guide-to-oauth)
+12. [Put&Post](https://stackoverflow.com/questions/630453/what-is-the-difference-between-post-and-put-in-http)
 
 ## 在线课程
 
