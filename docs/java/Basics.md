@@ -145,6 +145,19 @@ public interface List<E> extends Collection<E> {
 6. 子类：成员属性、普通代码块
 7. 子类：构造器 
 
+### native
+
+> 说明其修饰的方法是一个原生态方法，方法对应的实现不在当前文件，而是在用其他的语言（如c或c++）实现的文件中。java语言本身不能对操作系统底层进行访问和操作，但可以通过JNI接口调用其他语言调用其他语言来实现对底层的访问
+
+> **JNI**是Java本机接口（Java Native Interface），是一个本机编程接口，它是Java软件开发工具箱（java Software Development Kit，SDK）的一部分。JNI允许Java代码使用以其他语言编写的代码和代码库。Invocation API（JNI的一部分）可以用来将Java虚拟机（JVM）嵌入到本机应用程序中，从而允许程序员从本机代码内部调用Java代码。
+
+#### native 用法
+1. 编写带native声明的方法的Java类（java文件）
+2. 使用javac命令编译编写Java类（class文件）
+3. 使用**javah -jni xxx** 来生成或后缀名为.h的头文件（.h文件）
+4. 使用其他语言（C、C++）实现本地方法
+5. 将本地方法编写的文件生成动态链接库（dll文件）
+
 ## 设计模式
 
 ### 单例模式
