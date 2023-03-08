@@ -2,7 +2,7 @@
 
 ### SpringBoot启动banner
 
-```java
+```
 ${AnsiColor.MAGENTA}
                              _
   ,_    ._,     _,_-/-__,   //
