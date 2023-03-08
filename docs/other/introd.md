@@ -8,6 +8,21 @@ https://paper.pig4cloud.com/
 - [ ] 看操作系统
 - [ ] 有道云
 
+//删除锁 分布式锁
+
+幻读 脏读
+淘汰策略
+zset具体实现
+适合创建索引
+在使用到条件查询字段、表连接的字段、排序分组字段，可以创建索引,例如where、on、order by、group by。
+创建索引需要注意以下的原则：
+    列的离散度不能太低。
+    列的数据不能更新太频繁。
+    不建议使用身份证号、uuid等无序的数据列创建索引。
+    一个表中创建索引的数量不能过多。
+    尽可能的创建联合索引，而不是新增一个索引。
+    字段过长时，使用前缀索引。
+
 
 1. [网络故障](https://www.javashitang.com/md/java/%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E5%8F%91%E7%94%9F%E9%97%AE%E9%A2%98%EF%BC%8C%E4%BD%A0%E4%B8%80%E8%88%AC%E6%80%8E%E4%B9%88%E6%8E%92%E6%9F%A5-%E7%BD%91%E7%BB%9C%E7%AF%87.html)
 2. [垃圾回收](https://www.javashitang.com/md/java/%E8%AF%B4%E4%B8%80%E4%B8%8B%E5%B8%B8%E8%A7%81%E7%9A%84%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8%E5%8F%8A%E5%85%B6%E9%80%82%E7%94%A8%E5%9C%BA%E6%99%AF.html)

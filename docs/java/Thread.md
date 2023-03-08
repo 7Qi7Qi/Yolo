@@ -9,6 +9,15 @@
 ### UML
 ![java.util.concurrent.Executor](../_assets/Executor.png)
 
+### 参数
+
+1. corePoolSize 核心线程大小
+2. maximumPoolSize 最大线程数量
+3. workQueue 队列长度
+
+> 创建线程时，如果当前线程数量没有到corePoolSize，则会创建线程；核心线程空闲也不会被销毁。
+> 当达到corePoolSize，则会进入workQueue；
+> 当队列已满，则会创建线程直至maximumPoolSize
 
 ### 线程池的两种提交任务方式区别
 + execute只能提交Runnable，无返回值

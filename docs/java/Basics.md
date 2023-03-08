@@ -158,6 +158,10 @@ public interface List<E> extends Collection<E> {
 4. 使用其他语言（C、C++）实现本地方法
 5. 将本地方法编写的文件生成动态链接库（dll文件）
 
+### clone
+
+![image-20220416134826842](../_assets/image-20220416134826842.png)
+
 ## 设计模式
 
 ### 单例模式
